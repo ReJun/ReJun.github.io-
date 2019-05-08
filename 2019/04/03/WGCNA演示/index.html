@@ -147,7 +147,7 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://ppd6ez4p8.bkt.clouddn.com/WGCNA%E6%BC%94%E7%A4%BA.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/WGCNA%E6%BC%94%E7%A4%BA.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >WGCNA演示</h2></a>
             </div>
             <!-- Post -->
@@ -186,7 +186,7 @@
     nGenes <span class="token operator">=</span> ncol<span class="token punctuation">(</span>datExpr<span class="token punctuation">)</span>
     nSamples <span class="token operator">=</span> nrow<span class="token punctuation">(</span>datExpr<span class="token punctuation">)</span>
 </code></pre>
-<p><img src="http://ppd6ez4p8.bkt.clouddn.com/Sample%20clustring.jpeg"></p>
+<p><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/Sample%20clustring.jpeg?Expires=1557210161&OSSAccessKeyId=TMP.AgEnPGKXgW126NzHirTUQ__zDu0q27yuVIbWeK0BcE9TKyGLPYfHdJWVdVyqADAtAhQijE10icTlvv-sxgcsoxMZuh9cEgIVAJ02NnXt1HHvIJua7FyJSP9QC_XM&Signature=49bQ5AMWYig7OtqbDovaQ%2FKjoUA%3D"></p>
 <pre class=" language-r"><code class="language-r">    Step3 阈值计算
     powers <span class="token operator">=</span> c<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> seq<span class="token punctuation">(</span>from <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">,</span> to<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> by<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">##计算软阈值</span>
     sft <span class="token operator">=</span> pickSoftThreshold<span class="token punctuation">(</span>datExpr<span class="token punctuation">,</span> powerVector <span class="token operator">=</span> powers<span class="token punctuation">,</span> verbose <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">##sft返回的是一个列表</span>
@@ -204,7 +204,7 @@
     main <span class="token operator">=</span> paste<span class="token punctuation">(</span><span class="token string">"Mean connectivity"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
     text<span class="token punctuation">(</span>sft<span class="token operator">$</span>fitIndices<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sft<span class="token operator">$</span>fitIndices<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> labels<span class="token operator">=</span>powers<span class="token punctuation">,</span> cex<span class="token operator">=</span>cex1<span class="token punctuation">,</span>col<span class="token operator">=</span><span class="token string">"red"</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="http://ppd6ez4p8.bkt.clouddn.com/Power%20soft.jpeg"></p>
+<p><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/Power%20soft.jpeg"></p>
 <p>经过上面代码的运行，得出了软阈值的结果。从左图中可以看到，当阈值达到6时，整个网络就已经靠近无尺度网络的分布了，R方也达到了0.95左右的水平。sft这个列表当中的powerEstimate代表的便是最佳阈值。右图代表的是整个网络中，随着阈值的变化，整个网络中节点(Gene)间的连接度均值，符合幂率分布。</p>
 <pre class=" language-r"><code class="language-r">    Step4 网络构建
     net <span class="token operator">=</span> blockwiseModules<span class="token punctuation">(</span>datExpr<span class="token punctuation">,</span> power <span class="token operator">=</span> sft<span class="token operator">$</span>powerEstimate<span class="token punctuation">,</span>
@@ -235,7 +235,7 @@
          tan    turquoise       yellow 
          <span class="token number">100</span>          <span class="token number">595</span>          <span class="token number">324</span>
 </code></pre>
-<p><img src="http://ppd6ez4p8.bkt.clouddn.com/Cluster%20Dendgrogram.jpeg"></p>
+<p><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/Cluster%20Dendgrogram.jpeg"></p>
 <p>在众多模块当中，grey模块里的基因代表无法被归类到任何一个模块里的基因。同时，WGCNA也可以将距离较近的模块合并.</p>
 <pre class=" language-r"><code class="language-r">     Step6 联系表型信息
     traitData <span class="token operator">=</span> read.csv<span class="token punctuation">(</span><span class="token string">"ClinicalTraits.csv"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">##引入表型信息相关数据</span>
@@ -278,7 +278,7 @@
                zlim <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                main <span class="token operator">=</span> paste<span class="token punctuation">(</span><span class="token string">"Module-trait relationships"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="http://ppd6ez4p8.bkt.clouddn.com/Rplot.jpeg"></p>
+<p><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/Rplot.jpeg"></p>
 <p>通过模块与表型相关性热图中可以看到：brown、red模块与weight有较高的相关性。研究者可以根据上述信息研究与目标表型相关联的模块，也可以研究感兴趣的模块。</p>
 <p>比较值得注意的是，即使算出了模块与表型的相关性，一个模块里也往往存在着比较多的基因。那么具体哪些基因值得我们去做后续的分析，还需要对模块进行更深一步的细化研究。</p>
 <pre class=" language-r"><code class="language-r">    Step7 GSvsMM
@@ -311,7 +311,7 @@
                    main <span class="token operator">=</span> paste<span class="token punctuation">(</span><span class="token string">"Module membership vs. gene significance\n"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                    cex.main <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">,</span> cex.lab <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">,</span> cex.axis <span class="token operator">=</span> <span class="token number">1.2</span><span class="token punctuation">,</span> col <span class="token operator">=</span> module<span class="token punctuation">)</span>
 </code></pre>
-<p><img src="http://ppd6ez4p8.bkt.clouddn.com/Rplot01.jpeg"></p>
+<p><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/Rplot01.jpeg"></p>
 <pre class=" language-r"><code class="language-r">    Step8 导出指定模块基因名
     module <span class="token operator">=</span> <span class="token string">"brown"</span>
     probes <span class="token operator">=</span> names<span class="token punctuation">(</span>datExpr<span class="token punctuation">)</span>

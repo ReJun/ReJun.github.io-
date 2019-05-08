@@ -147,7 +147,7 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://ppd6ez4p8.bkt.clouddn.com/WGCNA%E4%B8%80.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/WGCNA%E4%B8%80.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >WGCNA算法及简介</h2></a>
             </div>
             <!-- Post -->
@@ -169,14 +169,14 @@
 <p>其三：探索特点Module与表型之间的关系。</p>
 <h2 id="二-适用范围"><a href="#二-适用范围" class="headerlink" title="二.适用范围"></a>二.适用范围</h2><p>从数据来源讲，不管是芯片数据还是RNA-seq数据都可以作为WGCNA的输入数据。WGCNA官方所给的示范代码中，定义了两个比较重要的变量：<strong>datExpr</strong>、<strong>datTraits</strong>。</p>
 <p>datExpr是用来标识基因表达矩阵的。datTraits则是用来标识样本信息的。也就是说，WGCNA可以联系样本信息或者临床信息等对所得的基因模块进行进一步的分析。当然，<strong>这里datTraits所代表的数据并不是必须的，你可以只有datExpr这个表达矩阵作为输入</strong>。</p>
-<p>引自WGCNA官方:<br><img src="http://ppd6ez4p8.bkt.clouddn.com/overview-femaleLiver.png"></p>
+<p>引自WGCNA官方:<br><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/overview-femaleLiver.png"></p>
 <p>对于WGCNA来说，在样本方面，没有特别明确的硬性要求。然而，根据现有的相关文章及讨论。大多推荐样本数在<strong>15以上(包含生物学重复)，8以上(不包含生物学重复)</strong>。</p>
 <p>同时建议，<strong>以标准化后的数据作为输入，而不是原始的counts矩阵</strong>。比较值得注意的是，这里提及的标准化，通常我们都会下意识认为是FPKM或者RPKM这一类标准化后的数据。其实，标准化的手段很多，不一定要依照这几种，应当结合自身数据需求来进行合适的标准化。</p>
 <p>关于应用其他的标准化手段来对WGCNA数据进行处理，我会在后面讲。</p>
 <h2 id="三-无尺度网络简介"><a href="#三-无尺度网络简介" class="headerlink" title="三.无尺度网络简介"></a>三.无尺度网络简介</h2><p>从特征上来讲，无尺度网络是一种其度分布(Degree Distribution)符合幂律分布(Power Law)的复杂网络.在无尺度网络中，大多数节点与其他节点只有少数的连接，而少数的节点却可以与大量的节点相连，这区别于随机网络。在随机网络中，大多数节点的连接数是差不多的，基本上连接数超出平均值或低于平均值很大的节点是不存在的。</p>
-<p><img src="http://ppd6ez4p8.bkt.clouddn.com/Scale-free_network_sample.png"></p>
+<p><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/Scale-free_network_sample.png"></p>
 <p>所以两种网络从分布上看是大相径庭的。无尺度网络符合幂律分布，由逐渐递减的函数来描述。从双对数坐标系来看，则是一条直线。而随机网络则符合概率分布。</p>
-<figure class="half"><br><img src="http://ppd6ez4p8.bkt.clouddn.com/lINE.jpeg" width="700" height="500"><br><img src="http://ppd6ez4p8.bkt.clouddn.com/power%20laws.jpeg" width="700" height="500"><br></figure>
+<figure class="half"><br><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/lINE.jpeg" width="700" height="500"><br><img src="https://junandhisworld.oss-cn-huhehaote.aliyuncs.com/power%20laws.jpeg" width="700" height="500"><br></figure>
 
 <p>有人用马太效应解释幂律分布：穷着越穷，富者越富。真的是非常贴切。或者，用地位来形容的话，随机网络中大家的地位都差不多，所以随机网络是一个非常<strong>民主的国家</strong>。而无尺度网络中，大多数的节点地位都差不多，但有些节点却处于<strong>统治的地位</strong>，它们<strong>掌控</strong>着大多数的节点。</p>
 <p>那么从网络的稳健性来看，无尺度网络有着它自己的<strong>软肋</strong>。</p>
